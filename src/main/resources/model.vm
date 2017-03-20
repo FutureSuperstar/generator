@@ -1,0 +1,31 @@
+package com.wowdsgn.model;
+
+import java.io.Serializable;
+import java.util.Date;
+/**
+ * @author：${email}
+ * @date：${date}
+ * @desc：${table.tableComment}
+ */
+public class $table.modelName implements Serializable{
+
+	#foreach($column in $table.columns)
+private $column.shortJavaType $column.fieldName;//$column.comment
+	#end
+	
+	private static final long serialVersionUID = 1L;
+	
+	public ${table.modelName}(){
+	
+	}
+	
+	#foreach($column in $table.columns)
+public void set$column.fieldNameF ($column.shortJavaType $column.fieldName ){
+		this.$column.fieldName=$column.fieldName;
+	}
+	public $column.shortJavaType get$column.fieldNameF (){
+		return this.$column.fieldName;
+	}
+	#end
+	
+}

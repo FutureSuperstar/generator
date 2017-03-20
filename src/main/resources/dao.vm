@@ -1,0 +1,16 @@
+package com.wowdsgn;
+
+public interface ${table.modelName}Mapper{
+	
+	int countByExample($table.modelName example);
+
+    int deleteByExample($table.modelName example);
+
+    int deleteByPrimaryKey(Integer id);
+
+    int insertSelective($table.modelName record);
+
+    List<$modelName> selectByExample($table.modelName example);
+
+    $table.modelName selectByPrimaryKey(Integer id);
+}

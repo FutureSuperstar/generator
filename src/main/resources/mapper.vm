@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wow.XXX. ${table.modelName}Mapper" >
+
+	int countByExample($table.modelName example);
+    int deleteByExample($table.modelName example);
+    int deleteByPrimaryKey(Integer id);
+    int insertSelective($table.modelName record);
+    List<$modelName> selectByExample($table.modelName example);
+    $table.modelName selectByPrimaryKey(Integer id);
+    
+    
+  <resultMap id="BaseResultMap" type="com.wow.XXX. ${table.modelName}" >
+  	#foreach($column in $table.columns)
+  <result column="$column.columnName" property="$column.fieldName" jdbcType="TINYINT" />
+	#end
+  </resultMap>
+  
+  <sql id="Base_Column_List" >
+  	#foreach($column in $table.columns)
+  $column.fieldName,
+	#end
+  </sql>
+  
+  <sql id="Base_Column_List" >
+  	#foreach($column in $table.columns)
+  $column.fieldName,
+	#end
+  </sql>
+  
+  int countByExample($table.modelName example);
+    int deleteByExample($table.modelName example);
+    int deleteByPrimaryKey(Integer id);
+    int insertSelective($table.modelName record);
+    List<$modelName> selectByExample($table.modelName example);
+    $table.modelName selectByPrimaryKey(Integer id);
+    
+    <select id="countByExample" parameterType="com.wow.admin.model.MenuExample" resultType="java.lang.Integer" >
+    	select count(*) from $table.tableName
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+</mapper>
